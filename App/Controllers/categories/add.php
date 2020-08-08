@@ -10,6 +10,5 @@ if (Request::isPost()) {
 		die("Some insert error");
 	}
 }
-
 $smarty -> display('categories/add.tpl');
 
