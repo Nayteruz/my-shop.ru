@@ -1,0 +1,14 @@
+{
+  "name": "vendor_name/my-shop.ru",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Александр",
+      "email": "nayteruz@gmail.com"
+    }
+  ],
+  "require": {
+  }
+}
