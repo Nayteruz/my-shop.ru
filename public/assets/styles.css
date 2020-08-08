@@ -1,0 +1,351 @@
+/* CSS Document */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+audio, canvas, video {
+  display: inline-block;
+}
+
+.lt-ie8 audio, .lt-ie8 canvas, .lt-ie8 video {
+  display: inline;
+  min-height: 0;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, form, label, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 100%;
+}
+
+img {
+  padding: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 100%;
+}
+
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  height: 100%;
+  min-width: 980px;
+}
+
+html, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #222;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-width: 980px;
+  text-align: left;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+ins {
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+}
+
+q {
+  quotes: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+small {
+  font-size: 85%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+p, pre, blockquote, dl {
+  margin: 1em 0;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*img 						{ vertical-align: middle; }*/
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+form {
+  margin: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 1em;
+  border: 1px solid gray;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+}
+
+.lt-ie8 legend {
+  margin-left: 7px;
+}
+
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+.lt-ie8 button, input, select, textarea {
+  vertical-align: middle;
+}
+
+button, input {
+  line-height: normal;
+}
+
+button, input[type=button], input[type=reset], input[type=submit] {
+  cursor: pointer;
+}
+
+.lt-ie8 button, input[type=button], input[type=reset], input[type=submit] {
+  overflow: visible;
+}
+
+button[disabled], input[disabled] {
+  cursor: default;
+}
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.lt-ie8 input[type=checkbox], input[type=radio] {
+  width: 13px;
+  height: 13px;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 0 0 10px 0;
+}
+
+h2 {
+  font-size: 25px;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 14px;
+  margin: 1.33em 0;
+}
+
+h5 {
+  font-size: 12px;
+  margin: 1.5em 0;
+}
+
+h6 {
+  font-size: 11px;
+  margin: 1.67em 0;
+}
+
+body {
+  background: #ccc;
+  font: normal 13px Arial, Helvetica, sans-serif;
+}
+
+.site-wrap {
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  width: 980px;
+  background: #fff;
+  padding-bottom: 30px;
+}
+
+.top-menu {
+  width: 100%;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  background-color: #7952b3;
+}
+.top-menu li {
+  margin: 0px 8px 0px;
+}
+.top-menu li a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+}
+.top-menu li a:hover {
+  color: #fff;
+}
+.top-menu li a.active {
+  color: #fff;
+}
+
+.f400p {
+  width: 400px;
+}
+.f400p .form-group {
+  margin-bottom: 2px;
+}
+.f400p .form-control {
+  width: 100%;
+  box-sizing: border-box;
+}
+.f400p textarea {
+  height: 70px;
+}
+
+.pag-wr {
+  margin: 10px 0px;
+}
+
+div.container .left-column {
+  width: 200px;
+  flex: 0 0 200px;
+}
+div.container .left-column .left-folders {
+  padding: 20px 0px 0px 0px;
+}
+div.container .left-column .left-folders .folders-name {
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+div.container .left-column .left-folders .nav-item {
+  margin-bottom: 3px;
+}
+div.container .text-side {
+  padding: 10px 0px 0px 0px;
+}
+
+.bg-dark .nav-link {
+  color: #fff;
+}
+.bg-dark .nav-link:hover {
+  color: #ababab;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+table td {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-width: 0px 0px 1px 0;
+}
+table th {
+  padding: 5px 10px;
+  border: 1px solid #797777;
+  font-weight: bold;
+  background: #ccc;
+  border-width: 0px 0px 1px 0;
+}
