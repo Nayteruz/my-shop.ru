@@ -1,4 +1,4 @@
-<form method="post" class="form f400p">
+<form method="post" class="form f400p" enctype="multipart/form-data">
     <input class="form-control" type="hidden" name="id" value="{$product.id}">
     <div class="form-group">
         <label class="col-form-label">Название:</label>
@@ -14,6 +14,10 @@
             {/foreach}
         </select>
 
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Фото товара:</label>
+        <input class="form-control" type="file" multiple name="images[]" >
     </div>
     <div class="form-group">
         <label class="col-form-label">Артикул:</label>
