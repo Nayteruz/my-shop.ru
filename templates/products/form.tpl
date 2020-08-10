@@ -10,15 +10,65 @@
         <select class="form-control" name="category_id">
             <option value="0">Не выбрано</option>
             {foreach from=$categories item=category}
-                <option {if $product.category_id == $category.id}selected{/if} value="{$category.id}">{$category.name}</option>
+                <option {if $product.category_id == $category.id}selected{/if}
+                        value="{$category.id}">{$category.name}</option>
             {/foreach}
         </select>
 
     </div>
     <div class="form-group">
         <label class="col-form-label">Фото товара:</label>
-        <input class="form-control" type="file" multiple name="images[]" >
+        <input class="form-control" type="file" multiple name="images[]">
     </div>
+    {if $product.images}
+        <div class="form-group d-flex">
+            {foreach from=$product.images item=image}
+                <div class="card" style="width: 90px;">
+                    <div class="card-body">
+                        <button class="btn btn-danger btn-sm" data-image-id="{$image.id}"
+                                onclick="return deleteImage(this)">Удалить
+                        </button>
+                    </div>
+                    <img style="max-height: 150px; max-width: 100%; width: auto;" src="{$image.path}"
+                         alt="{$image.name}">
+                </div>
+            {/foreach}
+        </div>
+    {literal}
+        <script>
+            function deleteImage(button) {
+                let imageId = $(button).attr('data-image-id');
+                imageId = parseInt(imageId);
+                if (!imageId) {
+                    alert('Проблема с imageId');
+                    return false;
+                }
+
+                let url = '/products/delete_image';
+
+                const formData = new FormData();
+                formData.append('product_image_id', imageId);
+
+                fetch(url, {
+                    method: "POST",
+                    body: formData
+                }).then((response) => {
+                    response.text()
+                    .then((text) =>{
+                        if(text.includes('error')){
+                            alert('Ошибка при удалении')
+                        } else {
+                            location.reload();
+                        }
+                    })
+                })
+
+
+                return false;
+            }
+        </script>
+    {/literal}
+    {/if}
     <div class="form-group">
         <label class="col-form-label">Артикул:</label>
         <input class="form-control" type="text" name="article" value="{$product.article}" required>
