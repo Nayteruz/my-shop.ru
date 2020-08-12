@@ -17,36 +17,45 @@ if (Request::isPost()) {
     $imageNames = $uploadImages['name'];
     $imageTmpNames = $uploadImages['tmp_name'];
 
-    $currentImageNames = [];
-    foreach ($product['images'] as $image) {
-        $currentImageNames[] = $image['name'];
-    }
-
-    $diffImageNames = array_diff($imageNames, $currentImageNames);
-
     $path = APP_UPLOAD_PRODUCT_DIR . '/' . $productId;
 
     if (!file_exists($path)) {
         mkdir($path);
     }
+//    echo '<pre>';
+//    var_dump($imageNames, $imageTmpNames);
+//    echo '</pre>';
+//    exit;
 
     for ($i = 0; $i < count($imageNames); $i++) {
         $imageName = basename($imageNames[$i]);
         $imageTmpname = $imageTmpNames[$i];
 
-        $imagePath = $path . '/' . $imageName;
+        $filename = $imageName;
+        $counter = 0;
+        while (true) {
+            $dublicateImage = ProductImage::findByFilenameInProduct($productId, $filename);
+            if (empty($dublicateImage)) {
+                break;
+            }
+            $info = pathinfo($imageName);
+            $filename = $info['filename'];
+            $filename .= '_' . $counter . '.' . $info['extension'];
+            $counter++;
+        }
+
+        $imagePath = $path . '/' . $filename;
 
         move_uploaded_file($imageTmpname, $imagePath);
 
-        if (in_array($imageName, $diffImageNames)) {
+        if (!empty($filename)) {
             ProductImage::add([
                 'product_id' => $productId,
-                'name' => $imageName,
+                'name' => $filename,
                 'path' => str_replace(APP_PUBLIC_DIR, '', $imagePath),
             ]);
         }
     }
-
 
     Responce::redirect('/products/list');
 
