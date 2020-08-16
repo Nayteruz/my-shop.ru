@@ -76,4 +76,3 @@ fabric.properties
 *.tpl.php
 /var/compile/
 /ToGit/
-/ToGit2/
