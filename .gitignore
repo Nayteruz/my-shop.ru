@@ -74,4 +74,3 @@ fabric.properties
 
 /public/upload/
 *.tpl.php
-/var/compile/
