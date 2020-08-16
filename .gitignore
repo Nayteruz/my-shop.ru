@@ -1,2 +1,2 @@
-compile/*.tpl.php
+*.tpl.php
 /public/upload/
