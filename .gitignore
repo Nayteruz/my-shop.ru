@@ -1,3 +1,2 @@
-*.tpl.php
-
+/var/compile/
 /public/upload/
