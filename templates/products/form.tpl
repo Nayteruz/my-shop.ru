@@ -17,6 +17,10 @@
 
     </div>
     <div class="form-group">
+        <label class="col-form-label">Ссылка ни изображение:</label>
+        <input class="form-control" type="text" name="image_url">
+    </div>
+    <div class="form-group">
         <label class="col-form-label">Фото товара:</label>
         <input class="form-control" type="file" multiple name="images[]">
     </div>
