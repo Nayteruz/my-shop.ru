@@ -79,7 +79,7 @@
     </div>
     <div class="form-group">
         <label class="col-form-label">Описание:</label>
-        <textarea class="form-control" name="anonce" cols="50" rows="5" required>{$product.anonce}</textarea>
+        <textarea class="form-control" name="description" cols="50" rows="5" required>{$product.description}</textarea>
     </div>
     <div class="form-group">
         <label class="col-form-label">Цена:</label>

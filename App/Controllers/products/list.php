@@ -1,7 +1,7 @@
 <?php
 
 $current_page = Request::getIntFromGet('p', 1);
-$limit = 2;
+$limit = 10;
 $offset = ($current_page - 1) * $limit;
 
 $products_count = Product::getListCount();

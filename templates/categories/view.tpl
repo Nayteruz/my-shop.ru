@@ -24,7 +24,7 @@
             <td>{$product.article}</td>
             <td>{$product.price}</td>
             <td>{$product.amount}</td>
-            {*<td width="200px">{$product.anonce}</td>*}
+            {*<td width="200px">{$product.description}</td>*}
             <td width="140">
                 <a class="btn btn-primary" href='/products/edit?id={$product.id}'>Ред.</a>
                 <form style='display:inline;' method='post' action='/products/delete'><input type='hidden' name='id'

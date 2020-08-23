@@ -83,7 +83,13 @@ class Db
 
         foreach ($fields as $field_name => $field_value) {
             $field_names[] = "`$field_name`";
-            $field_values[] = "'$field_value'";
+
+            if ($field_value instanceof DbExp){
+                $field_values[] = "$field_value";
+            } else {
+                $field_value = Db::escape($field_value);
+                $field_values[] = "'$field_value'";
+            }
         }
         $field_names = implode(',', $field_names);
         $field_values = implode(',', $field_values);
@@ -100,6 +106,12 @@ class Db
         $set_fields = [];
 
         foreach ($fields as $field_name => $field_value) {
+            if ($field_value instanceof DbExp){
+                $set_fields[] = "`$field_name` = $field_value";
+            } else {
+                $field_value = Db::escape($field_value);
+                $set_fields[] = "`$field_name` = '$field_value'";
+            }
             $set_fields[] = "`$field_name` = '$field_value'";
         }
         $set_fields = implode(',', $set_fields);
@@ -124,6 +136,17 @@ class Db
     {
         $connect = static::getConnect();
         return mysqli_insert_id($connect);
+    }
+
+    public static function expr(string $value)
+    {
+        return new DbExp($value);
+    }
+
+    public static function escape(string $value)
+    {
+        $connect = static::getConnect();
+        return mysqli_real_escape_string($connect, $value);
     }
 
     private

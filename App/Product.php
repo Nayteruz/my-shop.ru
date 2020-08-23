@@ -57,7 +57,10 @@ class Product
     public static function deleteById(int $id)
     {
         $path = APP_UPLOAD_PRODUCT_DIR . '/' . $id;
-        deleteDir($path);
+        var_dump($path);
+        if (file_exists($path)) {
+            deleteDir($path);
+        }
 
         ProductImage::deleteByProductId($id);
 
@@ -70,10 +73,18 @@ class Product
             'id'          => Request::getIntFromPost('id', false),
             'name'        => Request::getStrFromPost('name'),
             'article'     => Request::getStrFromPost('article'),
-            'anonce'      => Request::getStrFromPost('anonce'),
+            'description' => Request::getStrFromPost('description'),
             'price'       => Request::getIntFromPost('price'),
             'amount'      => Request::getIntFromPost('amount'),
             'category_id' => Request::getIntFromPost('category_id')
         ];
+    }
+
+    public static function getByField(string $mainField, string $value)
+    {
+        $mainField = Db::escape($mainField);
+        $value = Db::escape($value);
+        $query = "SELECT * FROM products WHERE `$mainField` = '$value'";
+        return Db::fetchRow($query);
     }
 }
